@@ -28,7 +28,16 @@ const exampleMovies = require("./movies");
       "James and the Giant Peach",
     ];
  */
-function getAllMovieTitles() {}
+function getAllMovieTitles(movies) {
+  movieNames = []
+  if (movies != []){
+  for (let i = 0; i < movies.length; i++) {
+    movieNames.push(movies[i].title)
+    }
+
+  }
+  return movieNames
+}
 
 /**
  * getHighestMetascore()
@@ -41,7 +50,29 @@ function getAllMovieTitles() {}
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore(movies) {
+  highestmeta = []
+  
+  if(movies.){
+  for (let i = 0; i < movies.length; i++) {
+    highestmeta.push(movies.ratings[2])
+    console.log(`Here we are`)
+    }
+  }else if(movies === []){
+    return 0
+  }
+  return highestmeta
+}  
+
+// First attempt
+  // if(movies = []){
+  //   return 0
+  // }else if(movies){
+  // // for (let i = 0; i < movies.length; i++) {
+  // //   highestmeta.push(movies.ratings[2])
+  // //   console.log(`Here we are`)
+  //   }
+  // return highestmeta
 
 /**
  * getAverageIMDBRating()
@@ -54,7 +85,9 @@ function getHighestMetascore() {}
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movies) {
+  
+}
 
 /**
  * countByRating()
@@ -67,7 +100,9 @@ function getAverageIMDBRating() {}
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+function countByRating(movies) {
+
+}
 
 /**
  * findById()
@@ -83,7 +118,16 @@ function countByRating() {}
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies,id) {
+  for (let i = 0; i < array.length; i++) {
+    if(movies.imdbID == id){
+      return movies[i]
+    } else if(movies.imdbID !== id){
+      return null
+    }else if(movies === [])
+    return null
+  }
+}
 
 /**
  * filterByGenre()
@@ -129,7 +173,15 @@ function filterByGenre() {}
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies) {
+  moviebefore2000 = []
+  for (let i = 0; i < movies.length; i++) {
+    if(movies.released <= 2000){
+      moviebefore2000.push(movies[i])
+    }
+    
+  }
+}
 
 /**
  * getBiggestBoxOfficeMovie()
